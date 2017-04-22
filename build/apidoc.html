@@ -1,0 +1,1490 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://gitt.io/cli"
+
+    >gittio (v0.6.4)</a>
+</h1>
+<h4>Install Titanium modules and Alloy widgets</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gittio">module gittio</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.demo">
+            function <span class="apidocSignatureSpan">gittio.</span>demo
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.info">
+            function <span class="apidocSignatureSpan">gittio.</span>info
+            <span class="apidocSignatureSpan">(id, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.install">
+            function <span class="apidocSignatureSpan">gittio.</span>install
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.uninstall">
+            function <span class="apidocSignatureSpan">gittio.</span>uninstall
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gittio.</span>alloy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gittio.</span>component</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gittio.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gittio.</span>logger</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gittio.</span>tiapp</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gittio.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gittio.alloy">module gittio.alloy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.alloy.addDependency">
+            function <span class="apidocSignatureSpan">gittio.alloy.</span>addDependency
+            <span class="apidocSignatureSpan">(id, version)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.alloy.dropDependency">
+            function <span class="apidocSignatureSpan">gittio.alloy.</span>dropDependency
+            <span class="apidocSignatureSpan">(id, version)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gittio.component">module gittio.component</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.component.filterDists">
+            function <span class="apidocSignatureSpan">gittio.component.</span>filterDists
+            <span class="apidocSignatureSpan">(cmp, o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.component.lookup">
+            function <span class="apidocSignatureSpan">gittio.component.</span>lookup
+            <span class="apidocSignatureSpan">(id, callback, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gittio.config">module gittio.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.config.init">
+            function <span class="apidocSignatureSpan">gittio.config.</span>init
+            <span class="apidocSignatureSpan">(params, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.config.list">
+            function <span class="apidocSignatureSpan">gittio.config.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.config.set">
+            function <span class="apidocSignatureSpan">gittio.config.</span>set
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gittio.config.</span>registry.url</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gittio.logger">module gittio.logger</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.logger.debug">
+            function <span class="apidocSignatureSpan">gittio.logger.</span>debug
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.logger.error">
+            function <span class="apidocSignatureSpan">gittio.logger.</span>error
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.logger.info">
+            function <span class="apidocSignatureSpan">gittio.logger.</span>info
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.logger.trace">
+            function <span class="apidocSignatureSpan">gittio.logger.</span>trace
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.logger.warn">
+            function <span class="apidocSignatureSpan">gittio.logger.</span>warn
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gittio.tiapp">module gittio.tiapp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.tiapp.addDependency">
+            function <span class="apidocSignatureSpan">gittio.tiapp.</span>addDependency
+            <span class="apidocSignatureSpan">(id, version, platforms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.tiapp.dropDependency">
+            function <span class="apidocSignatureSpan">gittio.tiapp.</span>dropDependency
+            <span class="apidocSignatureSpan">(id, version, platform)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gittio.utils">module gittio.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.utils.camelCase">
+            function <span class="apidocSignatureSpan">gittio.utils.</span>camelCase
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.utils.prefix">
+            function <span class="apidocSignatureSpan">gittio.utils.</span>prefix
+            <span class="apidocSignatureSpan">(id, version, platforms)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gittio.utils.prettyJSON">
+            function <span class="apidocSignatureSpan">gittio.utils.</span>prettyJSON
+            <span class="apidocSignatureSpan">(val, key, depth)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gittio" id="apidoc.module.gittio">module gittio</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.demo" id="apidoc.element.gittio.demo">
+        function <span class="apidocSignatureSpan">gittio.</span>demo
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function demo(o) {
+
+  if (config.context === &#x27;project&#x27;) {
+    logger.error(&#x27;will not create a project within a project: &#x27; + project_path);
+    return;
+  }
+
+  component.lookup(o.id, function(err, cmp) {
+
+    if (err) {
+      logger.error(err);
+      return;
+    }
+
+    if (cmp.type !== &#x27;module&#x27;) {
+      logger.error(&#x27;demo only works with modules.&#x27;);
+      return;
+    }
+
+    var project_name = utils.camelCase(cmp.title);
+    var project_path = path.join(process.cwd(), project_name);
+
+    if (fs.existsSync(project_path)) {
+      logger.error(&#x27;cannot create already existing: &#x27; + project_path);
+      return;
+    }
+
+    // filter all dists
+    var dists = component.filterDists(cmp, o);
+
+    // nothing to install
+    if (dists.length === 0) {
+      var prefix = utils.prefix(o.id, o.version);
+      return;
+    }
+
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;--- CREATING PROJECT ---&#x27;);
+    console.log(&#x27;&#x27;);
+
+    // create project
+    exec(&#x27;ti&#x27;, [&#x27;create&#x27;, &#x27;-t&#x27;, &#x27;app&#x27;, &#x27;-u&#x27;, &#x27;http://gitt.io&#x27;, &#x27;-p&#x27;, cmp.platforms.join(&#x27;,&#x27;), &#x27;-n&#x27;, project_name, &#x27;--id&#x27;, cmp.id
+, &#x27;-d&#x27;, process.cwd()], {
+      stdio: &#x27;inherit&#x27;
+    }, function(err, stdout) {
+
+      if (err) {
+        logger.error(&#x27;Failed to create project: &#x27; + err.stack);
+
+        if (err.message.indexOf(&#x27;spawn ti ENOENT&#x27;) !== -1) {
+          logger.error(&#x27;This command requires the global Titanium CLI: [sudo] npm i -g titanium&#x27;);
+        }
+
+        process.exit(1);
+      }
+
+      console.log(&#x27;--- INSTALLING MODULE ---&#x27;);
+      console.log(&#x27;&#x27;);
+
+      // install module
+      exec(&#x27;gittio&#x27;, [&#x27;install&#x27;, cmp.id + (o.version ? &#x27;@&#x27; + o.version : &#x27;&#x27;) + (o.platform ? &#x27;:&#x27; + o.platform : &#x27;&#x27;)], {
+        cwd: project_path,
+        stdio: &#x27;inherit&#x27;
+      }, function(err, stdout) {
+
+        if (err) {
+          logger.error(&#x27;Failed to install module: &#x27; + err.stack);
+          process.exit(1);
+        }
+
+        console.log(&#x27;&#x27;);
+        console.log(&#x27;--- PREPARING EXAMPLES ---&#x27;);
+        console.log(&#x27;&#x27;);
+
+        var build = null;
+
+        // if the user defined the platform(s) we only want those
+        if (undefined !== o.platform) {
+          cmp.platforms = _.intersection(cmp.platforms, o.platform.split(&#x27;,&#x27;));
+
+          if (cmp.platforms.length === 0) {
+            console.error(&#x27;The module has none of the requested platforms.&#x27;);
+            return;
+          }
+        }
+
+        // for each platform
+        _.some(cmp.platforms, function(platform) {
+
+          if (platform === &#x27;ios&#x27;) {
+            platform = &#x27;iphone&#x27;;
+          }
+
+          var module_path = path.join(project_path, &#x27;modules&#x27;, platform, cmp.id);
+          var version = fs.readdirSync(module_path)[0];
+          var example_path = path.join(module_path, version, &#x27;example&#x27;);
+
+          // no example
+          if (!fs.existsSync(path.join(example_path, &#x27;app.js&#x27;))) {
+            logger.warn(&#x27;No example for &#x27; + platform);
+            return;
+          }
+
+          logger.info(&#x27;Copied example for &#x27; + platform);
+
+          // copy example
+          fs.copySync(example_path, path.join(project_path, &#x27;Resources&#x27;, platform));
+
+          build = build || platform;
+
+          // break the loop, we only need one example
+          return true;
+        });
+
+        // no examples
+        if (!build) {
+          logger.error(&#x27;No examples found.&#x27;);
+          return;
+        }
+
+        console.log(&#x27;&#x27;);
+        console.log(&#x27;--- BUILDING PROJECT ---&#x27;);
+        console.log(&#x27;&#x27;);
+
+        // build first platform
+        exec(&#x27;ti&#x27;, [&#x27;build&#x27;, &#x27;-p&#x27;, build], {
+          cwd: project_path,
+          stdio: &#x27;inherit&#x27;
+        }, function(err, stdout) {
+
+          if (err) {
+            logger.error(&#x27;Failed to build project: &#x27; + err.stack);
+            process.exit(1);
+          }
+
+        });
+      });
+    });
+  }, {
+    action: &#x27;demo&#x27;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    argsToParams(args, params);
+
+    if (!params.id) {
+      logger.error(&#x27;missing &#x3c;id&#x3e;&#x27;);
+      return;
+    }
+
+    return gittio.<span class="apidocCodeKeywordSpan">demo</span>(params);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.info" id="apidoc.element.gittio.info">
+        function <span class="apidocSignatureSpan">gittio.</span>info
+        <span class="apidocSignatureSpan">(id, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function info(id, options) {
+
+  config.init({
+    global: true
+  }, function() {
+    component.lookup(id, function(err, info) {
+      if (err) {
+        if (options.output === &#x22;json&#x22;) {
+          console.log(JSON.stringify({
+            error: err
+          }));
+        } else {
+          logger.error(err);
+        }
+        return;
+      }
+      if (options.output === &#x22;json&#x22;) {
+        console.log(JSON.stringify(info, null, &#x27;  &#x27;));
+      } else {
+        utils.prettyJSON(info);
+        console.log(&#x27;&#x27;);
+      }
+    }, {
+      silent: options.output === &#x22;json&#x22;,
+      action: &#x27;info&#x27;
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var deps = config.alloy_config.dependencies;
+
+// widget is in list with same version (if given)
+if (deps[id] &#x26;&#x26; (!version || deps[id] === version)) {
+  return;
+}
+
+logger.<span class="apidocCodeKeywordSpan">info</span>(utils.prefix(id, version) + &#x27; &#x27; + (deps[id] ? &#x27;updated in&#
+x27; : &#x27;added to&#x27;) + &#x27; config.json&#x27;);
+config.alloy_config.dependencies[id] = version || &#x27;*&#x27;;
+fs.writeFileSync(config.alloy_config_file, JSON.stringify(config.alloy_config, null, &#x22;  &#x22;));
+};
+
+exports.dropDependency = function(id, version) {
+var deps = config.alloy_config.dependencies;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.install" id="apidoc.element.gittio.install">
+        function <span class="apidocSignatureSpan">gittio.</span>install
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function install(o) {
+
+  if (o.version === &#x27;*&#x27;) {
+    delete o.version;
+  }
+
+  if (o.url) {
+    return _installUrl(o.url, o);
+
+  } else if (o.file) {
+    return _installFile(o.file, o);
+
+  } else if (o.id) {
+    return _installSingle(o);
+
+  } else {
+    if (config.context === &#x22;global&#x22;) {
+      if (o.update &#x26;&#x26; o.type !== &#x22;widget&#x22;) {
+        return _installAllModules(o);
+      } else {
+        logger.error(&#x22;This command must be executed from a project directory&#x22;);
+        return;
+      }
+    }
+    if (o.type === &#x27;widget&#x27;) {
+      return _installAllWidgets(o);
+    } else if (o.type === &#x27;module&#x27;) {
+      return _installAllModules(o);
+    } else {
+      return _installAll(o);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    global: this.global,
+    platform: this.platform,
+    type: env.type,
+    update: true,
+    alloyBase: this.alloyBase
+  };
+  config.init(params, function() {
+    return gittio.<span class="apidocCodeKeywordSpan">install</span>(params);
+  });
+});
+
+var uninstall_cmd = program.command(&#x27;uninstall &#x3c;id&#x3e;&#x27;)
+.usage(&#x27;&#x3c;id&#x3e;@&#x3c;version&#x3e;:&#x3c;platform&#x3e;&#x27;)
+.description(&#x27;uninstall a module or widget&#x27;)
+.action(uninstall);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.uninstall" id="apidoc.element.gittio.uninstall">
+        function <span class="apidocSignatureSpan">gittio.</span>uninstall
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function uninstall(o) {
+
+  if (o.version === &#x27;*&#x27;) {
+    delete o.version;
+  }
+
+  if (!_uninstallWidget(o)) {
+    _uninstallModule(o);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  argsToParams(args, params);
+
+  if (!params.id) {
+    logger.error(&#x27;missing &#x3c;id&#x3e;&#x27;);
+    return;
+  }
+
+  return gittio.<span class="apidocCodeKeywordSpan">uninstall</span>(params);
+});
+}
+
+function demo(env) {
+notifier.notify();
+
+var args = this.args;
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gittio.alloy" id="apidoc.module.gittio.alloy">module gittio.alloy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.alloy.addDependency" id="apidoc.element.gittio.alloy.addDependency">
+        function <span class="apidocSignatureSpan">gittio.alloy.</span>addDependency
+        <span class="apidocSignatureSpan">(id, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDependency = function (id, version) {
+  var deps = config.alloy_config.dependencies;
+
+  // widget is in list with same version (if given)
+  if (deps[id] &#x26;&#x26; (!version || deps[id] === version)) {
+    return;
+  }
+
+  logger.info(utils.prefix(id, version) + &#x27; &#x27; + (deps[id] ? &#x27;updated in&#x27; : &#x27;added to&#x27;) + &#x27; config.json&#x27;);
+  config.alloy_config.dependencies[id] = version || &#x27;*&#x27;;
+  fs.writeFileSync(config.alloy_config_file, JSON.stringify(config.alloy_config, null, &#x22;  &#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.alloy.dropDependency" id="apidoc.element.gittio.alloy.dropDependency">
+        function <span class="apidocSignatureSpan">gittio.alloy.</span>dropDependency
+        <span class="apidocSignatureSpan">(id, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropDependency = function (id, version) {
+  var deps = config.alloy_config.dependencies;
+
+  // widget is not in list or with different version (if given)
+  if (!deps[id] || (version &#x26;&#x26; version !== deps[id])) {
+    return;
+  }
+
+  logger.info(utils.prefix(id, deps[id]) + &#x27; removed from config.json&#x27;);
+  delete config.alloy_config.dependencies[id];
+  fs.writeFileSync(config.alloy_config_file, JSON.stringify(config.alloy_config, null, &#x22;  &#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gittio.component" id="apidoc.module.gittio.component">module gittio.component</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.component.filterDists" id="apidoc.element.gittio.component.filterDists">
+        function <span class="apidocSignatureSpan">gittio.component.</span>filterDists
+        <span class="apidocSignatureSpan">(cmp, o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterDists = function (cmp, o) {
+  var platforms, dists = [];
+
+  // split platforms given
+  if (o.platform) {
+    platforms = o.platform.split(&#x27;,&#x27;);
+
+    // use deploymentTargets found in tiapp.xml
+  } else if (config.targets &#x26;&#x26; _.size(config.targets) &#x3e; 0) {
+    platforms = _.clone(config.targets);
+
+    // install all platforms available
+  } else {
+    platforms = _.clone(cmp.platforms);
+  }
+
+  var addedCommonJS = false;
+
+  // always include commonjs
+  if (!_.contains(platforms, &#x27;commonjs&#x27;)) {
+    addedCommonJS = true;
+    platforms.unshift(&#x27;commonjs&#x27;);
+  }
+
+  var platform;
+
+  // valid **specific** version, valid range, or something else (tags?)
+  var targetVersion = semver.valid(o.version) || semver.validRange(o.version) || o.version;
+
+  var versions = cmp.versions.map(function (v) {
+    v.semver = semver.valid(v.version) || semver.valid(v.version + &#x27;.0&#x27;) || null;
+    return v;
+  }).sort(looseCompareDists);
+
+  var matches;
+
+  // while we have platforms to cover
+  while ((platform = platforms.shift()) !== undefined) {
+
+    // filter for versions that..
+    matches = versions.filter(function (v) {
+      // have a dist and matches platform
+      return v.dist &#x26;&#x26; _.contains(v.platforms, platform);
+    });
+
+    var version;
+
+    if (!targetVersion) {
+      version = matches.pop();
+
+    } else {
+      while ((version = matches.pop()) !== undefined) {
+        if (version.semver !== null ? semver.satisfies(version.semver, targetVersion) : (version.version === targetVersion)) {
+          break;
+        }
+      }
+    }
+
+    var prefix = utils.prefix(cmp.id, o.version, platform);
+
+    // specific version not found
+    if (!version &#x26;&#x26; o.version) {
+
+      // don&#x27;t error on the commonjs we added
+      if (platform !== &#x27;commonjs&#x27; || !addedCommonJS) {
+        logger.error(prefix + &#x27; not found&#x27;);
+      }
+
+      continue;
+    }
+
+    // no distributable version found
+    if (!version || !version.dist) {
+      logger.error(prefix + &#x27; no distributable available&#x27;);
+      continue;
+    }
+
+    // init paths
+    if (cmp.type == &#x27;widget&#x27;) {
+      version.trgPath = path.join(config.widgets_path, cmp.id);
+
+      if (version.path.length &#x3e; 0) {
+        version.srcPath = path.join(cmp.repo + &#x22;-&#x22; + version.tree, version.path);
+      } else {
+        version.srcPath = path.join(cmp.repo + &#x22;-&#x22; + version.tree);
+      }
+
+    } else {
+      version.trgPath = o.global ? config.global_modules_path : config.modules_path;
+      version.srcPath = &#x27;modules&#x27;;
+    }
+
+    // remove the platforms this dist covers from our wanted-list
+    platforms = _.difference(platforms, version.platforms);
+
+    dists.push(version);
+
+    // for widgets we only do one
+    if (cmp.type === &#x27;widget&#x27;) {
+      break;
+    }
+  }
+
+  return dists;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.component.lookup" id="apidoc.element.gittio.component.lookup">
+        function <span class="apidocSignatureSpan">gittio.component.</span>lookup
+        <span class="apidocSignatureSpan">(id, callback, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lookup = function (id, callback, options) {
+  options = options || {};
+  var prefix = utils.prefix(id);
+
+  if (!options.silent) {
+    logger.info(prefix + &#x27; searching...&#x27;);
+  }
+
+  var url = config[&#x27;registry.url&#x27;] + id;
+
+  if (options.action) {
+    url += &#x27;?action=&#x27; + options.action;
+  }
+
+  request(url, function(error, response, body) {
+
+    if (!error &#x26;&#x26; response.statusCode == 200) {
+      var cmp = JSON.parse(body);
+
+      if (cmp.error) {
+        callback(prefix + &#x27; &#x27; + cmp.error, null);
+        return;
+      }
+
+      // prepare for new types to be added
+      if (cmp.type !== &#x27;widget&#x27; &#x26;&#x26; cmp.type !== &#x27;module&#x27;) {
+        callback(prefix + &#x27; unsupported type: &#x27; + cmp.type);
+        return;
+      }
+
+      callback(null, cmp);
+
+    } else {
+      callback(prefix + &#x27; error contacting registry: &#x27; + url, null);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gittio.config" id="apidoc.module.gittio.config">module gittio.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.config.init" id="apidoc.element.gittio.config.init">
+        function <span class="apidocSignatureSpan">gittio.config.</span>init
+        <span class="apidocSignatureSpan">(params, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (params, callback) {
+
+  // check the rc for the keys below and use them if they were not already defined
+  var allowedRcKeys = [&#x27;alloyBase&#x27;, &#x27;platform&#x27;];
+  var rcParams = require(&#x27;rc&#x27;)(&#x27;gittio&#x27;, {});
+  allowedRcKeys.forEach(function(key) {
+    if (params[key] === null &#x26;&#x26; rcParams[key] !== null) {
+      params[key] = rcParams[key];
+    }
+  });
+
+  // export all the global config
+  _.extend(exports, read());
+
+  timodules.list(process.cwd(), function(err, res) {
+
+<span class="apidocCodeCommentSpan">    /*
+     res = {
+       path: String, // project root path
+       current: [{name, version, platform}] //current modules from tiapp.xml
+       modules: [{name, version, platform, scope}] // list of installed modules
+       tiapp: tiapp xml as an object
+     }
+    */
+</span>    if (err) {
+
+      if (_.isObject(err)) {
+        err = err.toString();
+      }
+
+      if (err === &#x27;Not Found&#x27;) {
+
+        if (!params.global) {
+          logger.error(&#x22;gittio must be run within a titanium project path if not using the --global flag&#x22;);
+          process.exit(1);
+        } else {
+          exports.context = &#x27;global&#x27;;
+        }
+
+      } else {
+
+        if (err === true) {
+          logger.error(&#x27;Error running timodules.&#x27;);
+
+        } else {
+          logger.error(&#x27;Error running timodules: &#x27; + err);
+
+          if (/spawn (ti|appc) ENOENT/.test(&#x27;spawn ti ENOENT&#x27;)) {
+            logger.error(&#x27;You need either the Titanim or Appcelerator CLI to be installed:\n        [sudo] npm i -g titanium appcelerator
+&#x27;);
+          } else if (err.indexOf(&#x27;[Error: Module version mismatch.]&#x27;) !== -1) {
+            logger.error(&#x27;You need to rebuild the AppC/Titanium CLI after switching major NodeJS version:\n        [sudo] npm i -
+g titanium &#x26;&#x26; appc use latest --force&#x27;);
+          } else if (err.indexOf(&#x27;(node) sys is deprecated. Use util instead.&#x27;) !== -1) {
+            logger.error(&#x27;You have a Titanium CLI hook that messes with the output. Please disable.&#x27;);
+          }
+        }
+
+        process.exit(1);
+      }
+
+    } else {
+      exports.context = &#x27;project&#x27;;
+    }
+
+    // build paths
+    if (exports.context === &#x27;project&#x27;) {
+      var base = res.path;
+      var alloy = path.join(base, params.alloyBase || &#x27;app&#x27;);
+      var alloy_config_file = path.join(alloy, &#x27;config.json&#x27;);
+      var deploymentTargets = [];
+
+      res.tiapp.obj[&#x27;ti:app&#x27;][&#x27;deployment-targets&#x27;][0].target.forEach(function(t) {
+        if (t._ === &#x27;true&#x27;) {
+          var platform = t.$.device;
+          if (platform === &#x27;ipad&#x27; || platform === &#x27;iphone&#x27;) {
+            if (deploymentTargets.indexOf(&#x27;ios&#x27;) !== -1) {
+              return;
+            }
+            platform = &#x27;ios&#x27;;
+          }
+          deploymentTargets.push(platform);
+        }
+      });
+
+      exports.base = base;
+      exports.modules_path = path.join(base, &#x27;modules&#x27;);
+      exports.widgets_path = path.join(alloy, &#x27;widgets&#x27;);
+      exports.isAlloy = fs.existsSync(alloy_config_file);
+      exports.targets = deploymentTargets;
+
+      // alloy config
+      if (exports.isAlloy) {
+        try {
+          exports.alloy_config_file = alloy_config_file;
+          exports.alloy_config = require(alloy_config_file);
+        } catch (e) {
+          logger.error(e);
+          process.exit(1);
+        }
+      }
+    }
+
+    exports.current_modules = res.current;
+    exports.available_modules = res.modules;
+    exports.tiapp = res.tiapp;
+
+    appc.ti([&#x27;sdk&#x27;, &#x27;list&#x27;, &#x27;-o&#x27;, &#x27;json&#x27;], function(err, stdout, stderr) {
+
+      if (err) {
+        logger.error(&#x27;Failed to get Titanium SDK config: &#x27; + stderr);
+        process.exit(1);
+      }
+
+      exports.global_path = JSON.parse(stdout).defaultInstallLocation;
+      // modules setup
+      exports.global_modules_path = path.join(exports.global_path, &#x22;modules&#x22;);
+
+      callback();
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    force: this.force,
+    global: this.global,
+    platform: this.platform,
+    type: env.type,
+    update: true,
+    alloyBase: this.alloyBase
+  };
+  config.<span class="apidocCodeKeywordSpan">init</span>(params, function() {
+    return gittio.install(params);
+  });
+});
+
+var uninstall_cmd = program.command(&#x27;uninstall &#x3c;id&#x3e;&#x27;)
+.usage(&#x27;&#x3c;id&#x3e;@&#x3c;version&#x3e;:&#x3c;platform&#x3e;&#x27;)
+.description(&#x27;uninstall a module or widget&#x27;)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.config.list" id="apidoc.element.gittio.config.list">
+        function <span class="apidocSignatureSpan">gittio.config.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function () {
+  var cfg = read();
+  var userConfig = readUser();
+
+  console.log();
+
+  _.each(cfg, function(val, key) {
+
+    var color = (userConfig[key] !== undefined) ? &#x27;green&#x27; : &#x27;blue&#x27;;
+
+    console.log(&#x27;  &#x27; + chalk[color].bold(key));
+    console.log(&#x27;    &#x27; + val);
+
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+program.command(&#x27;config&#x27;)
+.description(&#x27;list all global configuration settings&#x27;)
+.action(function(env) {
+
+  // only run if there are no arguments
+  if (this.args.length === 1) {
+
+    require(&#x27;../lib/config&#x27;).<span class="apidocCodeKeywordSpan">list</span>();
+
+    // or commander will also run the other config command
+    process.exit();
+
+  }
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.config.set" id="apidoc.element.gittio.config.set">
+        function <span class="apidocSignatureSpan">gittio.config.</span>set
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (key, value) {
+  var defaultConfig = readDefault();
+
+  if (defaultConfig[key] === undefined) {
+    logger.error(&#x27;Unknown configuration key: &#x27; + key);
+    return;
+  }
+
+  var userConfig = readUser();
+
+  if (typeof value !== &#x27;string&#x27;) {
+    delete userConfig[key];
+
+  } else {
+
+    if (value === &#x27;true&#x27;) {
+      value = true;
+    } else if (value === &#x27;false&#x27;) {
+      value = false;
+    }
+
+    if (typeof value !== typeof defaultConfig[key]) {
+      logger.error(&#x27;Invalid configuration value type: &#x27; + (typeof value) + &#x27; (should be: &#x27; + (typeof defaultConfig[key]) + &#x27;)&#x27;);
+      return;
+    }
+
+    userConfig[key] = value;
+  }
+
+  writeUser(userConfig);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+});
+
+program.command(&#x27;config &#x3c;key&#x3e; &#x3c;value&#x3e;&#x27;)
+.description(&#x27;set a global configuration setting&#x27;)
+.action(function(env) {
+
+  require(&#x27;../lib/config&#x27;).<span class="apidocCodeKeywordSpan">set</span>(this.args[0], this.args[1]);
+
+});
+
+program.parse(process.argv);
+
+if (program.args.length === 0 || typeof program.args[program.args.length - 1] === &#x27;string&#x27;) {
+notifier.notify();
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gittio.logger" id="apidoc.module.gittio.logger">module gittio.logger</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.logger.debug" id="apidoc.element.gittio.logger.debug">
+        function <span class="apidocSignatureSpan">gittio.logger.</span>debug
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">debug = function (msg) {
+  console[level](color(&#x27;[&#x27; + level.toUpperCase() + &#x27;]&#x27;) + (level.length !== 5 ? &#x27; &#x27; : &#x27;&#x27;) + &#x27; &#x27; + msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.logger.error" id="apidoc.element.gittio.logger.error">
+        function <span class="apidocSignatureSpan">gittio.logger.</span>error
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (msg) {
+  console[level](color(&#x27;[&#x27; + level.toUpperCase() + &#x27;]&#x27;) + (level.length !== 5 ? &#x27; &#x27; : &#x27;&#x27;) + &#x27; &#x27; + msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    platform: this.platform,
+    alloyBase: this.alloyBase
+  };
+  config.init(params, function() {
+    argsToParams(args, params);
+
+    if (!params.id) {
+      logger.<span class="apidocCodeKeywordSpan">error</span>(&#x27;missing &#x3c;id&#x3e;&#x27;);
+      return;
+    }
+
+    return gittio.uninstall(params);
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.logger.info" id="apidoc.element.gittio.logger.info">
+        function <span class="apidocSignatureSpan">gittio.logger.</span>info
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">info = function (msg) {
+  console[level](color(&#x27;[&#x27; + level.toUpperCase() + &#x27;]&#x27;) + (level.length !== 5 ? &#x27; &#x27; : &#x27;&#x27;) + &#x27; &#x27; + msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var deps = config.alloy_config.dependencies;
+
+// widget is in list with same version (if given)
+if (deps[id] &#x26;&#x26; (!version || deps[id] === version)) {
+  return;
+}
+
+logger.<span class="apidocCodeKeywordSpan">info</span>(utils.prefix(id, version) + &#x27; &#x27; + (deps[id] ? &#x27;updated in&#
+x27; : &#x27;added to&#x27;) + &#x27; config.json&#x27;);
+config.alloy_config.dependencies[id] = version || &#x27;*&#x27;;
+fs.writeFileSync(config.alloy_config_file, JSON.stringify(config.alloy_config, null, &#x22;  &#x22;));
+};
+
+exports.dropDependency = function(id, version) {
+var deps = config.alloy_config.dependencies;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.logger.trace" id="apidoc.element.gittio.logger.trace">
+        function <span class="apidocSignatureSpan">gittio.logger.</span>trace
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trace = function (msg) {
+  console[level](color(&#x27;[&#x27; + level.toUpperCase() + &#x27;]&#x27;) + (level.length !== 5 ? &#x27; &#x27; : &#x27;&#x27;) + &#x27; &#x27; + msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.logger.warn" id="apidoc.element.gittio.logger.warn">
+        function <span class="apidocSignatureSpan">gittio.logger.</span>warn
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">warn = function (msg) {
+  console[level](color(&#x27;[&#x27; + level.toUpperCase() + &#x27;]&#x27;) + (level.length !== 5 ? &#x27; &#x27; : &#x27;&#x27;) + &#x27; &#x27; + msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gittio.tiapp" id="apidoc.module.gittio.tiapp">module gittio.tiapp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.tiapp.addDependency" id="apidoc.element.gittio.tiapp.addDependency">
+        function <span class="apidocSignatureSpan">gittio.tiapp.</span>addDependency
+        <span class="apidocSignatureSpan">(id, version, platforms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addDependency = function (id, version, platforms) {
+
+  platforms.forEach(function(platform) {
+    var prefix = utils.prefix(id, version, platform);
+    var platform = platform.replace(&#x22;ios&#x22;, &#x22;iphone&#x22;);
+
+    var configured = _.find(config.current_modules, function(m) {
+      return m.name === id &#x26;&#x26; m.platform === platform;
+    });
+
+    // add module
+    if (!configured) {
+      logger.info(prefix + &#x27; adding to tiapp.xml&#x27;);
+
+      var module = {
+        &#x22;_&#x22;: id,
+        &#x22;$&#x22;: {
+          platform: platform
+        }
+      };
+
+      // only add version if asked for specific
+      if (version) {
+        module.$.version = version;
+      }
+
+      // first module
+      if (!config.tiapp.obj[&#x27;ti:app&#x27;].modules[0].module) {
+        config.tiapp.obj[&#x27;ti:app&#x27;].modules = [{
+          module: [module]
+        }];
+      }
+
+      // additional module
+      else {
+        config.tiapp.obj[&#x27;ti:app&#x27;].modules[0].module.push(module);
+      }
+    }
+
+    // update version, only if asked for specific or a version is set
+    else if (configured.version || (version &#x26;&#x26; configured.version !== version)) {
+      logger.info(prefix + &#x27; updating in tiapp.xml&#x27;);
+
+      // find entry in tiapp.xml
+      config.tiapp.obj[&#x27;ti:app&#x27;].modules[0].module.forEach(function(m) {
+        if (m[&#x22;_&#x22;] === id &#x26;&#x26; m[&#x22;$&#x22;].platform === platform) {
+          m[&#x22;$&#x22;].version = version || configured.version;
+        }
+      });
+    }
+
+    // nothing to do
+    else {
+      return;
+    }
+
+    // write tiapp.xml
+    writeTiapp(config.tiapp.obj[&#x27;ti:app&#x27;].modules[0]);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.tiapp.dropDependency" id="apidoc.element.gittio.tiapp.dropDependency">
+        function <span class="apidocSignatureSpan">gittio.tiapp.</span>dropDependency
+        <span class="apidocSignatureSpan">(id, version, platform)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dropDependency = function (id, version, platform) {
+  var write = false;
+
+  if (config.tiapp.obj[&#x27;ti:app&#x27;].modules[0].module) {
+
+    config.tiapp.obj[&#x27;ti:app&#x27;].modules[0].module = _.filter(config.tiapp.obj[&#x27;ti:app&#x27;].modules[0].module, function(o) {
+      var attribs = o.$ || {};
+
+      if (o._ !== id || (version &#x26;&#x26; attribs.version !== version) || (platform &#x26;&#x26; attribs.platform !== platform)) {
+        return true;
+      } else {
+        logger.info(utils.prefix(id, attribs.version, attribs.platform) + &#x27; removed from tiapp.xml&#x27;);
+        write = true;
+        return false;
+      }
+    });
+  }
+
+  if (write) {
+    writeTiapp(config.tiapp.obj[&#x27;ti:app&#x27;].modules[0]);
+  }
+
+  return write;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gittio.utils" id="apidoc.module.gittio.utils">module gittio.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.utils.camelCase" id="apidoc.element.gittio.utils.camelCase">
+        function <span class="apidocSignatureSpan">gittio.utils.</span>camelCase
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">camelCase = function (str) {
+
+  return _.map(str.toLowerCase().split(/[^a-z0-9]/), function onEach(part) {
+    return part.substr(0,1).toUpperCase() + part.substr(1);
+  }).join(&#x27;&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.utils.prefix" id="apidoc.element.gittio.utils.prefix">
+        function <span class="apidocSignatureSpan">gittio.utils.</span>prefix
+        <span class="apidocSignatureSpan">(id, version, platforms)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prefix = function (id, version, platforms) {
+  var prefix = id;
+
+  if (version &#x26;&#x26; version !== &#x27;*&#x27;) {
+    prefix += &#x27;@&#x27; + version;
+  }
+
+  if (platforms) {
+    prefix += &#x27;:&#x27;;
+
+    if (typeof platforms === &#x27;string&#x27;) {
+      prefix += platforms;
+    } else {
+      prefix += platforms.join(&#x27;,&#x27;);
+    }
+  }
+
+  return chalk.blue(prefix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var deps = config.alloy_config.dependencies;
+
+// widget is in list with same version (if given)
+if (deps[id] &#x26;&#x26; (!version || deps[id] === version)) {
+  return;
+}
+
+logger.info(utils.<span class="apidocCodeKeywordSpan">prefix</span>(id, version) + &#x27; &#x27; + (deps[id] ? &#x27;updated in&#
+x27; : &#x27;added to&#x27;) + &#x27; config.json&#x27;);
+config.alloy_config.dependencies[id] = version || &#x27;*&#x27;;
+fs.writeFileSync(config.alloy_config_file, JSON.stringify(config.alloy_config, null, &#x22;  &#x22;));
+};
+
+exports.dropDependency = function(id, version) {
+var deps = config.alloy_config.dependencies;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gittio.utils.prettyJSON" id="apidoc.element.gittio.utils.prettyJSON">
+        function <span class="apidocSignatureSpan">gittio.utils.</span>prettyJSON
+        <span class="apidocSignatureSpan">(val, key, depth)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function prettyJSON(val, key, depth) {
+
+  if (!depth) {
+    depth = 0;
+  }
+
+  var prefix = &#x27;&#x27;;
+
+  if (_.isString(key)) {
+
+    if (depth) {
+      prefix += Array(depth).join(&#x27; &#x27;);
+    }
+
+    prefix += chalk.green(key.toString()) + &#x27;:&#x27;;
+  }
+
+  if (_.isArray(val) &#x26;&#x26; !_.isObject(_.first(val))) {
+    console.log(prefix + &#x27; &#x27; + val.join(&#x27;, &#x27;));
+
+  } else if (_.isObject(val)) {
+    console.log(prefix);
+
+    if (!_.isArray(val)) {
+      depth += 2;
+    }
+
+    _.each(val, function(val, key) {
+      prettyJSON(val, key, depth);
+    });
+
+  } else {
+    console.log(prefix + ((val !== null &#x26;&#x26; val !== undefined) ? &#x27; &#x27; + val : &#x27;&#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
